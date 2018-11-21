@@ -58,8 +58,8 @@ namespace TPRLab5
             dgvInput.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 
 
-          
-           dgvCrits.ColumnCount = (int)nuCriteries.Value;
+
+            dgvCrits.ColumnCount = (int)nuCriteries.Value;
             dgvCrits.RowCount = 1;
             dgvCrits.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvCrits.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -211,7 +211,6 @@ namespace TPRLab5
                 for (int i = 0; i < crits; i++)
                     CritPs[i].Save(sw);
 
-
                 sw.Close();
             }
         }
@@ -259,11 +258,8 @@ namespace TPRLab5
                 for (int i = 0; i < alts; i++)
                     for (int j = 0; j < crits; j++)
                         dgvInput[j + 1, i].Value = critMat[i, j];
-
             }
-
             Input();
-
         }
 
         private void dgvInput_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -293,87 +289,74 @@ namespace TPRLab5
 
         void Output()
         {
-            int x = dgvInput.Left, y = dgvInput.Top + dgvInput.Height + 20;
-
-            DataGridView dgv = null;
             //////////////////////////////////////
             ///матрицы сравнений по критериям
             /////////////////////////////////////
+            //
+            dgvDelta.RowCount = alts;
+            dgvDelta.ColumnCount = crits * (alts + 1);
+
+            for (int i = 0; i < alts; i++)
+            {
+                dgvDelta.Rows[i].HeaderCell.Value = altNames[i];
+            }
+
             for (int c = 0; c < crits; c++)
             {
-
-                dgv = newDGV(x, y, alts, alts);
-                dgv.TopLeftHeaderCell.Value = "Критерий" + (c + 1).ToString();
-
                 for (int i = 0; i < alts; i++)
                 {
-                    dgv.Rows[i].HeaderCell.Value = altNames[i];
-                    dgv.Columns[i].HeaderText = altNames[i];
+                    dgvDelta[(alts + 1) * c, i].Value = "Критерий" + (c + 1).ToString();
+                    dgvDelta.Columns[(alts + 1) * c + i + 1].HeaderText = altNames[i];
                 }
                 for (int i = 0; i < alts; i++)
                     for (int j = 0; j < alts; j++)
-                        dgv[j, i].Value = d[c][i, j];
-
-                this.Controls.Add(dgv);
-
-                x += dgv.Width + 50;
+                        dgvDelta[j + c * (alts + 1) + 1, i].Value = d[c][i, j];
             }
             //////////////////////////////////
-            x = dgvInput.Left;
-            y += 50 + dgv.Height;
 
             ///////////////////////////////////
             ///матрицы с p 
             /////////////////////
-            dgv = newDGV(x, y, alts + 1, crits * alts);
+            dgvFun.RowCount = crits * alts;
+            dgvFun.ColumnCount = alts + 1;
+            for (int i = 0; i < dgvFun.RowCount - 1; i++)
+                dgvFun.Rows[i + 1].HeaderCell.Value = "P" + (i / alts + 1).ToString();
 
-            for (int i = 0; i < dgv.RowCount - 1; i++)
-                dgv.Rows[i + 1].HeaderCell.Value = "P" + (i / alts + 1).ToString();
-
-            for (int i = 0; i < dgv.RowCount - 1; i++)
-                dgv[0, i].Value = "a" + (i % alts + 1).ToString();
+            for (int i = 0; i < dgvFun.RowCount - 1; i++)
+                dgvFun[0, i].Value = "a" + (i % alts + 1).ToString();
 
             for (int i = 0; i < alts; i++)
-                dgv.Columns[i + 1].HeaderText = "a" + (i + 1).ToString();
+                dgvFun.Columns[i + 1].HeaderText = "a" + (i + 1).ToString();
 
             for (int i = 0; i < mat2.n; i++)
                 for (int j = 0; j < mat2.m; j++)
-                    dgv[j + 1, i].Value = mat2[i, j];
-
-
-
-            this.Controls.Add(dgv);
-            this.AutoScroll = true;
-
-
-            //////////////////////////
-            x += dgv.Width + 20;
+                    dgvFun[j + 1, i].Value = mat2[i, j];
 
 
             ////////////////////////
             ///матрица пи и Ф+, Ф-
             //////////////////////////////
-            dgv = newDGV(x, y, alts + 1, alts + 1);
+
+            dgvPi.ColumnCount = alts + 1;
+            dgvPi.RowCount = alts + 1;
 
             for (int i = 0; i < alts; i++)
-                dgv.Columns[i].HeaderText = "pi(ai, a" + (i + 1).ToString() + ")";
-            dgv.Columns[alts].HeaderText = "Ф+";
+                dgvPi.Columns[i].HeaderText = "pi(ai, a" + (i + 1).ToString() + ")";
+            dgvPi.Columns[alts].HeaderText = "Ф+";
 
             for (int i = 0; i < alts; i++)
-                dgv.Rows[i].HeaderCell.Value = "pi(a" + (i + 1).ToString() + ", aj)";
-            dgv.Rows[alts].HeaderCell.Value = "Ф-";
+                dgvPi.Rows[i].HeaderCell.Value = "pi(a" + (i + 1).ToString() + ", aj)";
+            dgvPi.Rows[alts].HeaderCell.Value = "Ф-";
 
             for (int i = 0; i < alts; i++)
                 for (int j = 0; j < alts; j++)
-                    dgv[j, i].Value = pi[i, j];
+                    dgvPi[j, i].Value = pi[i, j];
 
             for (int i = 0; i < alts; i++)
-                dgv[alts, i].Value = F_plus[i];
+                dgvPi[alts, i].Value = F_plus[i];
 
             for (int i = 0; i < alts; i++)
-                dgv[i, alts].Value = F_min[i];
-
-            this.Controls.Add(dgv);
+                dgvPi[i, alts].Value = F_min[i];
 
             ////////////////////////////////
             ///результаты

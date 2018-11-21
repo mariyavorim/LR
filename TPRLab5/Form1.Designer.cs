@@ -42,6 +42,9 @@
             this.nuCriteries = new System.Windows.Forms.NumericUpDown();
             this.nuAlternatives = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvDelta = new System.Windows.Forms.DataGridView();
+            this.dgvFun = new System.Windows.Forms.DataGridView();
+            this.dgvPi = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEndResult)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCrits)).BeginInit();
@@ -49,11 +52,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuCriteries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuAlternatives)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPi)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(27, 34);
+            this.btnStart.Location = new System.Drawing.Point(6, 17);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(151, 27);
             this.btnStart.TabIndex = 4;
@@ -65,9 +71,9 @@
             // 
             this.dgvEndResult.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvEndResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEndResult.Location = new System.Drawing.Point(27, 76);
+            this.dgvEndResult.Location = new System.Drawing.Point(6, 50);
             this.dgvEndResult.Name = "dgvEndResult";
-            this.dgvEndResult.Size = new System.Drawing.Size(349, 111);
+            this.dgvEndResult.Size = new System.Drawing.Size(391, 111);
             this.dgvEndResult.TabIndex = 8;
             // 
             // groupBox1
@@ -193,21 +199,48 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dgvPi);
+            this.groupBox2.Controls.Add(this.dgvFun);
+            this.groupBox2.Controls.Add(this.dgvDelta);
             this.groupBox2.Controls.Add(this.dgvEndResult);
             this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Location = new System.Drawing.Point(454, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(403, 414);
+            this.groupBox2.Size = new System.Drawing.Size(403, 502);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // dgvDelta
+            // 
+            this.dgvDelta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDelta.Location = new System.Drawing.Point(7, 183);
+            this.dgvDelta.Name = "dgvDelta";
+            this.dgvDelta.Size = new System.Drawing.Size(390, 101);
+            this.dgvDelta.TabIndex = 9;
+            // 
+            // dgvFun
+            // 
+            this.dgvFun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFun.Location = new System.Drawing.Point(8, 319);
+            this.dgvFun.Name = "dgvFun";
+            this.dgvFun.Size = new System.Drawing.Size(388, 88);
+            this.dgvFun.TabIndex = 10;
+            // 
+            // dgvPi
+            // 
+            this.dgvPi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPi.Location = new System.Drawing.Point(9, 428);
+            this.dgvPi.Name = "dgvPi";
+            this.dgvPi.Size = new System.Drawing.Size(377, 64);
+            this.dgvPi.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(932, 495);
+            this.ClientSize = new System.Drawing.Size(932, 526);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -221,6 +254,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuCriteries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuAlternatives)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,6 +276,9 @@
         private System.Windows.Forms.NumericUpDown nuCriteries;
         private System.Windows.Forms.NumericUpDown nuAlternatives;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvPi;
+        private System.Windows.Forms.DataGridView dgvFun;
+        private System.Windows.Forms.DataGridView dgvDelta;
     }
 }
 
