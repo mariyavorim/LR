@@ -96,6 +96,7 @@
             this.btnLoad.TabIndex = 19;
             this.btnLoad.Text = "Загрузить из файла";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
@@ -105,6 +106,7 @@
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Сохранить в файл";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label3
             // 
@@ -169,6 +171,7 @@
             this.nuCriteries.Name = "nuCriteries";
             this.nuCriteries.Size = new System.Drawing.Size(162, 20);
             this.nuCriteries.TabIndex = 12;
+            this.nuCriteries.ValueChanged += new System.EventHandler(this.nuCriteries_ValueChanged);
             // 
             // nuAlternatives
             // 
@@ -186,6 +189,7 @@
             0,
             0,
             0});
+            this.nuAlternatives.ValueChanged += new System.EventHandler(this.nuAlternatives_ValueChanged);
             // 
             // groupBox2
             // 
