@@ -229,10 +229,18 @@ namespace TPRLab5
                 nuCriteries.Value = crits;
 
                 for (int i = 0; i < crits; i++)
+                {
+                    dgvCrits.Columns[i].HeaderText = "w" + (i + 1);
                     dgvCrits[i, 0].Value = w[i];
 
+                    dgvInput.Columns[i + 1].HeaderText = "f" + (i + 1);
+                }
+
                 for (int i = 0; i < alts; i++)
+                {
                     dgvInput[0, i].Value = altNames[i];
+                    dgvInput.Rows[i].HeaderCell.Value = "a" + (i + 1);
+                }
 
                 for (int i = 0; i < alts; i++)
                     for (int j = 0; j < crits; j++)
@@ -309,11 +317,11 @@ namespace TPRLab5
             dgvPi.RowCount = alts + 1;
 
             for (int i = 0; i < alts; i++)
-                dgvPi.Columns[i].HeaderText = "pi(ai, a" + (i + 1).ToString() + ")";
+                dgvPi.Columns[i].HeaderText = "π(ai, a" + (i + 1).ToString() + ")";
             dgvPi.Columns[alts].HeaderText = "Ф+";
 
             for (int i = 0; i < alts; i++)
-                dgvPi.Rows[i].HeaderCell.Value = "pi(a" + (i + 1).ToString() + ", aj)";
+                dgvPi.Rows[i].HeaderCell.Value = "π(a" + (i + 1).ToString() + ", aj)";
             dgvPi.Rows[alts].HeaderCell.Value = "Ф-";
 
             for (int i = 0; i < alts; i++)
