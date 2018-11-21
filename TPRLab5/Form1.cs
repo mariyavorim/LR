@@ -176,18 +176,18 @@ namespace TPRLab5
 
         }
         SortedDictionary<double, string> F_alts;
-        DataGridView newDGV(int x, int y, int cols, int rows)
-        {
-            var dgv = new DataGridView();
-            dgv.Top = y;
-            dgv.Left = x;
+        //DataGridView newDGV(int x, int y, int cols, int rows)
+        //{
+        //    var dgv = new DataGridView();
+        //    dgv.Top = y;
+        //    dgv.Left = x;
 
-            dgv.ColumnCount = cols;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dgv.RowCount = rows;
-            return dgv;
-        }
+        //    dgv.ColumnCount = cols;
+        //    dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        //    dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+        //    dgv.RowCount = rows;
+        //    return dgv;
+        //}
 
         private void btnSave_Click(object sender, EventArgs e)
         {

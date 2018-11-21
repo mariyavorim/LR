@@ -71,12 +71,18 @@
             // 
             // dgvEndResult
             // 
+            this.dgvEndResult.AllowUserToAddRows = false;
+            this.dgvEndResult.AllowUserToDeleteRows = false;
+            this.dgvEndResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEndResult.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEndResult.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvEndResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEndResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEndResult.Location = new System.Drawing.Point(6, 50);
             this.dgvEndResult.Name = "dgvEndResult";
-            this.dgvEndResult.Size = new System.Drawing.Size(454, 111);
+            this.dgvEndResult.ReadOnly = true;
+            this.dgvEndResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvEndResult.Size = new System.Drawing.Size(496, 111);
             this.dgvEndResult.TabIndex = 8;
             // 
             // groupBox1
@@ -213,39 +219,57 @@
             this.groupBox2.Controls.Add(this.dgvEndResult);
             this.groupBox2.Location = new System.Drawing.Point(454, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(466, 523);
+            this.groupBox2.Size = new System.Drawing.Size(508, 523);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Результат";
             // 
             // dgvPi
             // 
+            this.dgvPi.AllowUserToAddRows = false;
+            this.dgvPi.AllowUserToDeleteRows = false;
+            this.dgvPi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPi.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvPi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPi.Location = new System.Drawing.Point(6, 401);
             this.dgvPi.Name = "dgvPi";
-            this.dgvPi.Size = new System.Drawing.Size(454, 111);
+            this.dgvPi.ReadOnly = true;
+            this.dgvPi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvPi.Size = new System.Drawing.Size(496, 111);
             this.dgvPi.TabIndex = 11;
             // 
             // dgvFun
             // 
+            this.dgvFun.AllowUserToAddRows = false;
+            this.dgvFun.AllowUserToDeleteRows = false;
+            this.dgvFun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvFun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvFun.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvFun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFun.Location = new System.Drawing.Point(6, 284);
             this.dgvFun.Name = "dgvFun";
-            this.dgvFun.Size = new System.Drawing.Size(454, 111);
+            this.dgvFun.ReadOnly = true;
+            this.dgvFun.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvFun.Size = new System.Drawing.Size(496, 111);
             this.dgvFun.TabIndex = 10;
             // 
             // dgvDelta
             // 
+            this.dgvDelta.AllowUserToAddRows = false;
+            this.dgvDelta.AllowUserToDeleteRows = false;
+            this.dgvDelta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDelta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDelta.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDelta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDelta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDelta.Location = new System.Drawing.Point(6, 167);
             this.dgvDelta.Name = "dgvDelta";
-            this.dgvDelta.Size = new System.Drawing.Size(454, 111);
+            this.dgvDelta.ReadOnly = true;
+            this.dgvDelta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvDelta.Size = new System.Drawing.Size(496, 111);
             this.dgvDelta.TabIndex = 9;
             // 
             // Form1
@@ -253,7 +277,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(932, 547);
+            this.ClientSize = new System.Drawing.Size(974, 547);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
