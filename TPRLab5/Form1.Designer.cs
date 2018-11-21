@@ -317,8 +317,9 @@
             this.ClientSize = new System.Drawing.Size(974, 547);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Лабораторная работа №4";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEndResult)).EndInit();
             this.groupBox1.ResumeLayout(false);
