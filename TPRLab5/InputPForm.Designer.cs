@@ -50,17 +50,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnAbort = new System.Windows.Forms.Button();
+            this.rbPlus = new System.Windows.Forms.RadioButton();
+            this.rbMinus = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(23, 29);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(38, 17);
             this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "P1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
@@ -247,11 +247,35 @@
             this.btnAbort.UseVisualStyleBackColor = true;
             this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
             // 
+            // rbPlus
+            // 
+            this.rbPlus.AutoSize = true;
+            this.rbPlus.Checked = true;
+            this.rbPlus.Location = new System.Drawing.Point(255, 29);
+            this.rbPlus.Name = "rbPlus";
+            this.rbPlus.Size = new System.Drawing.Size(177, 17);
+            this.rbPlus.TabIndex = 22;
+            this.rbPlus.TabStop = true;
+            this.rbPlus.Text = "Положительно направленный";
+            this.rbPlus.UseVisualStyleBackColor = true;
+            // 
+            // rbMinus
+            // 
+            this.rbMinus.AutoSize = true;
+            this.rbMinus.Location = new System.Drawing.Point(258, 53);
+            this.rbMinus.Name = "rbMinus";
+            this.rbMinus.Size = new System.Drawing.Size(174, 17);
+            this.rbMinus.TabIndex = 23;
+            this.rbMinus.Text = "Отрицательно направленный";
+            this.rbMinus.UseVisualStyleBackColor = true;
+            // 
             // InputPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 332);
+            this.Controls.Add(this.rbMinus);
+            this.Controls.Add(this.rbPlus);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label7);
@@ -305,5 +329,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnAbort;
+        private System.Windows.Forms.RadioButton rbPlus;
+        private System.Windows.Forms.RadioButton rbMinus;
     }
 }

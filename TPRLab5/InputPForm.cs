@@ -34,7 +34,7 @@ namespace TPRLab5
             var rb1 = rbs
                 .Where(r => r.Checked)
                 .First();
-
+            bool sign = rbMinus.Checked;
             int ind = rbs.ToList().IndexOf(rb1);
             double q = 0, s = 0, sigma = 0;
             switch(ind)
@@ -47,7 +47,7 @@ namespace TPRLab5
                 case 5: sigma = double.Parse(tbP6sigma.Text); break;
                 default:throw new Exception("Не выбран радиобаттон");
             }
-            result = new PFunc(ind, q, s, sigma);
+            result = new PFunc(ind, q, s, sigma, sign);
             this.DialogResult = DialogResult.OK;
             this.Close();
 
