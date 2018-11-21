@@ -12,9 +12,10 @@ namespace TPRLab5
 {
     public partial class InputPForm : Form
     {
-        public InputPForm()
+        public InputPForm(int index)
         {
             InitializeComponent();
+            this.Text = "Выберите функцию P для " + (index + 1) + " критерия";
             rbs = new RadioButton[] { radioButton1, radioButton2, radioButton3, radioButton4, radioButton5, radioButton6 };
         }
 

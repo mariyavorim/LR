@@ -103,11 +103,12 @@ namespace TPRLab5
                 else
                     w[crit] = 0;
 
-            if (CritPs.Count > crits)
+            while (CritPs.Count > crits)
                 CritPs.RemoveAt(CritPs.Count - 1);
-            if (CritPs.Count < crits)
+
+            while (CritPs.Count < crits)
             {
-                InputPForm pf = new InputPForm();
+                InputPForm pf = new InputPForm(CritPs.Count);
                 pf.ShowDialog();
                 CritPs.Add(pf.result);
             }
