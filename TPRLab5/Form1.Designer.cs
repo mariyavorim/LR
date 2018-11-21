@@ -42,9 +42,9 @@
             this.nuCriteries = new System.Windows.Forms.NumericUpDown();
             this.nuAlternatives = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvDelta = new System.Windows.Forms.DataGridView();
-            this.dgvFun = new System.Windows.Forms.DataGridView();
             this.dgvPi = new System.Windows.Forms.DataGridView();
+            this.dgvFun = new System.Windows.Forms.DataGridView();
+            this.dgvDelta = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEndResult)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCrits)).BeginInit();
@@ -52,28 +52,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuCriteries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuAlternatives)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDelta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelta)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(6, 17);
+            this.btnStart.BackColor = System.Drawing.SystemColors.Control;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStart.Location = new System.Drawing.Point(297, 489);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(151, 27);
+            this.btnStart.Size = new System.Drawing.Size(133, 23);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Расчёт";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // dgvEndResult
             // 
             this.dgvEndResult.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvEndResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEndResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEndResult.Location = new System.Drawing.Point(6, 50);
             this.dgvEndResult.Name = "dgvEndResult";
-            this.dgvEndResult.Size = new System.Drawing.Size(391, 111);
+            this.dgvEndResult.Size = new System.Drawing.Size(454, 111);
             this.dgvEndResult.TabIndex = 8;
             // 
             // groupBox1
@@ -82,6 +85,7 @@
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnStart);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dgvCrits);
             this.groupBox1.Controls.Add(this.dgvInput);
@@ -89,29 +93,33 @@
             this.groupBox1.Controls.Add(this.nuAlternatives);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(436, 437);
+            this.groupBox1.Size = new System.Drawing.Size(436, 523);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Входные данные";
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(213, 391);
+            this.btnLoad.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLoad.Location = new System.Drawing.Point(152, 489);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(147, 23);
+            this.btnLoad.Size = new System.Drawing.Size(133, 23);
             this.btnLoad.TabIndex = 19;
             this.btnLoad.Text = "Загрузить из файла";
-            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(67, 391);
+            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Location = new System.Drawing.Point(6, 489);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(133, 23);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Сохранить в файл";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label3
@@ -119,23 +127,23 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.Size = new System.Drawing.Size(133, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Кол-во альтернатив";
+            this.label3.Text = "Количество альтернатив";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(178, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(122, 13);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Кол-во критериев";
+            this.label2.Text = "Количество критериев";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 265);
+            this.label1.Location = new System.Drawing.Point(14, 306);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 15;
@@ -148,9 +156,9 @@
             this.dgvCrits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCrits.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvCrits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCrits.Location = new System.Drawing.Point(17, 281);
+            this.dgvCrits.Location = new System.Drawing.Point(6, 322);
             this.dgvCrits.Name = "dgvCrits";
-            this.dgvCrits.Size = new System.Drawing.Size(398, 95);
+            this.dgvCrits.Size = new System.Drawing.Size(424, 152);
             this.dgvCrits.TabIndex = 14;
             // 
             // dgvInput
@@ -161,9 +169,9 @@
             this.dgvInput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInput.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Name1});
-            this.dgvInput.Location = new System.Drawing.Point(17, 88);
+            this.dgvInput.Location = new System.Drawing.Point(6, 88);
             this.dgvInput.Name = "dgvInput";
-            this.dgvInput.Size = new System.Drawing.Size(398, 165);
+            this.dgvInput.Size = new System.Drawing.Size(424, 202);
             this.dgvInput.TabIndex = 13;
             // 
             // Name1
@@ -203,44 +211,49 @@
             this.groupBox2.Controls.Add(this.dgvFun);
             this.groupBox2.Controls.Add(this.dgvDelta);
             this.groupBox2.Controls.Add(this.dgvEndResult);
-            this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Location = new System.Drawing.Point(454, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(403, 502);
+            this.groupBox2.Size = new System.Drawing.Size(466, 523);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // dgvDelta
-            // 
-            this.dgvDelta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDelta.Location = new System.Drawing.Point(7, 183);
-            this.dgvDelta.Name = "dgvDelta";
-            this.dgvDelta.Size = new System.Drawing.Size(390, 101);
-            this.dgvDelta.TabIndex = 9;
-            // 
-            // dgvFun
-            // 
-            this.dgvFun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFun.Location = new System.Drawing.Point(8, 319);
-            this.dgvFun.Name = "dgvFun";
-            this.dgvFun.Size = new System.Drawing.Size(388, 88);
-            this.dgvFun.TabIndex = 10;
+            this.groupBox2.Text = "Результат";
             // 
             // dgvPi
             // 
+            this.dgvPi.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvPi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPi.Location = new System.Drawing.Point(9, 428);
+            this.dgvPi.Location = new System.Drawing.Point(6, 401);
             this.dgvPi.Name = "dgvPi";
-            this.dgvPi.Size = new System.Drawing.Size(377, 64);
+            this.dgvPi.Size = new System.Drawing.Size(454, 111);
             this.dgvPi.TabIndex = 11;
+            // 
+            // dgvFun
+            // 
+            this.dgvFun.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvFun.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvFun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFun.Location = new System.Drawing.Point(6, 284);
+            this.dgvFun.Name = "dgvFun";
+            this.dgvFun.Size = new System.Drawing.Size(454, 111);
+            this.dgvFun.TabIndex = 10;
+            // 
+            // dgvDelta
+            // 
+            this.dgvDelta.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDelta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDelta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDelta.Location = new System.Drawing.Point(6, 167);
+            this.dgvDelta.Name = "dgvDelta";
+            this.dgvDelta.Size = new System.Drawing.Size(454, 111);
+            this.dgvDelta.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(932, 526);
+            this.ClientSize = new System.Drawing.Size(932, 547);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -254,9 +267,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuCriteries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuAlternatives)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDelta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDelta)).EndInit();
             this.ResumeLayout(false);
 
         }
