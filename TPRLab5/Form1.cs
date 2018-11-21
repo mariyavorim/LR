@@ -20,14 +20,12 @@ namespace TPRLab5
         {
             CritPs = new List<PFunc>();
             InitializeComponent();
-
         }
 
         private void nuAlternatives_ValueChanged(object sender, EventArgs e)
         {
             dgvInput.RowCount = (int)nuAlternatives.Value;
             dgvInput.Rows[dgvInput.RowCount - 1].HeaderCell.Value = ("a" + dgvInput.RowCount);
-            //  Input();
         }
 
 
@@ -41,28 +39,20 @@ namespace TPRLab5
                 dgvCrits.Columns[dgvCrits.ColumnCount - 1].HeaderText = "w" + dgvCrits.ColumnCount;
                 dgvInput.Columns[dgvInput.ColumnCount - 1].HeaderText = "f" + (dgvInput.ColumnCount - 1);
             }
-            // Input();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             dgvInput.ColumnCount = (int)nuCriteries.Value + 1;
-            dgvInput.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvInput.RowCount = (int)nuAlternatives.Value;
-            dgvInput.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvInput.AllowUserToAddRows = false;
             dgvInput.RowCount = 1;
             dgvInput.Rows[dgvInput.RowCount - 1].HeaderCell.Value = ("a" + dgvInput.RowCount);
             if (dgvInput.ColumnCount > 1)
                 dgvInput.Columns[dgvInput.ColumnCount - 1].HeaderText = "f" + (dgvInput.ColumnCount - 1);
-            dgvInput.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-
 
 
             dgvCrits.ColumnCount = (int)nuCriteries.Value;
             dgvCrits.RowCount = 1;
-            dgvCrits.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvCrits.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCrits.Columns[dgvCrits.ColumnCount - 1].HeaderText = "w" + dgvCrits.ColumnCount;
 
         }
@@ -176,18 +166,6 @@ namespace TPRLab5
 
         }
         SortedDictionary<double, string> F_alts;
-        //DataGridView newDGV(int x, int y, int cols, int rows)
-        //{
-        //    var dgv = new DataGridView();
-        //    dgv.Top = y;
-        //    dgv.Left = x;
-
-        //    dgv.ColumnCount = cols;
-        //    dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        //    dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-        //    dgv.RowCount = rows;
-        //    return dgv;
-        //}
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -262,17 +240,6 @@ namespace TPRLab5
             }
             Input();
         }
-
-        private void dgvInput_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //Input();
-        }
-
-        private void dgvCrits_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            // Input();
-        }
-
         private void btnStart_Click(object sender, EventArgs e)
         {
             try
@@ -320,10 +287,10 @@ namespace TPRLab5
             /////////////////////
             dgvFun.RowCount = crits * alts;
             dgvFun.ColumnCount = alts + 1;
-            for (int i = 0; i < dgvFun.RowCount - 1; i++)
-                dgvFun.Rows[i + 1].HeaderCell.Value = "P" + (i / alts + 1).ToString();
+            for (int i = 0; i < dgvFun.RowCount; i++)
+                dgvFun.Rows[i].HeaderCell.Value = CritPs[i/alts].name; 
 
-            for (int i = 0; i < dgvFun.RowCount - 1; i++)
+            for (int i = 0; i < dgvFun.RowCount ; i++)
                 dgvFun[0, i].Value = "a" + (i % alts + 1).ToString();
 
             for (int i = 0; i < alts; i++)

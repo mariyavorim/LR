@@ -11,7 +11,7 @@ namespace TPRLab5
         double q, s, sigma;
         int funType;
         public P func;
-
+        public string name;
 
         public PFunc(int type, double q, double s, double sigma)
         {
@@ -19,6 +19,7 @@ namespace TPRLab5
             this.q = q;
             this.s = s;
             this.sigma = sigma;
+            name = "P" + (funType + 1);
             func = createFunc();
         }
 

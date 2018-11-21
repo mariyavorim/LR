@@ -158,17 +158,25 @@
             // dgvCrits
             // 
             this.dgvCrits.AllowUserToAddRows = false;
+            this.dgvCrits.AllowUserToDeleteRows = false;
+            this.dgvCrits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCrits.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCrits.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCrits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCrits.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvCrits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCrits.Location = new System.Drawing.Point(6, 322);
             this.dgvCrits.Name = "dgvCrits";
+            this.dgvCrits.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvCrits.Size = new System.Drawing.Size(424, 152);
             this.dgvCrits.TabIndex = 14;
             // 
             // dgvInput
             // 
+            this.dgvInput.AllowUserToAddRows = false;
+            this.dgvInput.AllowUserToDeleteRows = false;
+            this.dgvInput.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvInput.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInput.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInput.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -177,6 +185,7 @@
             this.Name1});
             this.dgvInput.Location = new System.Drawing.Point(6, 88);
             this.dgvInput.Name = "dgvInput";
+            this.dgvInput.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvInput.Size = new System.Drawing.Size(424, 202);
             this.dgvInput.TabIndex = 13;
             // 
@@ -184,6 +193,7 @@
             // 
             this.Name1.HeaderText = "Название";
             this.Name1.Name = "Name1";
+            this.Name1.Width = 82;
             // 
             // nuCriteries
             // 
