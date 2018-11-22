@@ -63,7 +63,7 @@ namespace TPRLab5
         Matrix critMat;
         Matrix[] d;
         double[] w;
-        void Input()
+        bool Input()
         {
             crits = (int)nuCriteries.Value;
             alts = (int)nuAlternatives.Value;
@@ -99,9 +99,15 @@ namespace TPRLab5
             while (CritPs.Count < crits)
             {
                 InputPForm pf = new InputPForm(CritPs.Count);
-                pf.ShowDialog();
-                CritPs.Add(pf.result);
+                if (pf.ShowDialog() == DialogResult.OK)
+                    CritPs.Add(pf.result);
+                else
+                {
+                    CritPs.Clear();
+                    return false;
+                }
             }
+            return true;
 
 
         }
@@ -169,90 +175,94 @@ namespace TPRLab5
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Input();
+            if (!Input())
+                return;
             SaveFileDialog sfd = new SaveFileDialog();
 
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                StreamWriter sw = new StreamWriter(sfd.FileName);
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
 
-                sw.WriteLine(alts);
-                sw.WriteLine(crits);
+            StreamWriter sw = new StreamWriter(sfd.FileName);
 
-                for (int i = 0; i < alts; i++)
-                    sw.WriteLine(altNames[i]);
+            sw.WriteLine(alts);
+            sw.WriteLine(crits);
 
-                critMat.Save(sw);
+            for (int i = 0; i < alts; i++)
+                sw.WriteLine(altNames[i]);
 
-                for (int i = 0; i < crits; i++)
-                    sw.WriteLine(w[i]);
+            critMat.Save(sw);
 
-                for (int i = 0; i < crits; i++)
-                    CritPs[i].Save(sw);
+            for (int i = 0; i < crits; i++)
+                sw.WriteLine(w[i]);
 
-                sw.Close();
-            }
+            for (int i = 0; i < crits; i++)
+                CritPs[i].Save(sw);
+
+            sw.Close();
+
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
             FileDialog sfd = new OpenFileDialog();
 
-            if (sfd.ShowDialog() == DialogResult.OK)
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+            StreamReader sw = new StreamReader(sfd.FileName);
+
+            int alts = int.Parse(sw.ReadLine());
+            int crits = int.Parse(sw.ReadLine());
+            var altNames = new string[alts];
+            for (int i = 0; i < alts; i++)
+                altNames[i] = sw.ReadLine();
+
+            var critMat = new Matrix(alts, crits);
+            critMat.Load(sw);
+
+            var w = new double[crits];
+            for (int i = 0; i < crits; i++)
             {
-                StreamReader sw = new StreamReader(sfd.FileName);
-
-                int alts = int.Parse(sw.ReadLine());
-                int crits = int.Parse(sw.ReadLine());
-                var altNames = new string[alts];
-                for (int i = 0; i < alts; i++)
-                    altNames[i] = sw.ReadLine();
-
-                var critMat = new Matrix(alts, crits);
-                critMat.Load(sw);
-
-                var w = new double[crits];
-                for (int i = 0; i < crits; i++)
-                {
-                    w[i] = double.Parse(sw.ReadLine());
-                }
-
-                CritPs.Clear();
-                for (int i = 0; i < crits; i++)
-                {
-                    CritPs.Add(PFunc.Load(sw));
-                }
-
-                sw.Close();
-
-                nuAlternatives.Value = alts;
-                nuCriteries.Value = crits;
-
-                for (int i = 0; i < crits; i++)
-                {
-                    dgvCrits.Columns[i].HeaderText = "w" + (i + 1);
-                    dgvCrits[i, 0].Value = w[i];
-
-                    dgvInput.Columns[i + 1].HeaderText = "f" + (i + 1);
-                }
-
-                for (int i = 0; i < alts; i++)
-                {
-                    dgvInput[0, i].Value = altNames[i];
-                    dgvInput.Rows[i].HeaderCell.Value = "a" + (i + 1);
-                }
-
-                for (int i = 0; i < alts; i++)
-                    for (int j = 0; j < crits; j++)
-                        dgvInput[j + 1, i].Value = critMat[i, j];
+                w[i] = double.Parse(sw.ReadLine());
             }
+
+            CritPs.Clear();
+            for (int i = 0; i < crits; i++)
+            {
+                CritPs.Add(PFunc.Load(sw));
+            }
+
+            sw.Close();
+
+            nuAlternatives.Value = alts;
+            nuCriteries.Value = crits;
+
+            for (int i = 0; i < crits; i++)
+            {
+                dgvCrits.Columns[i].HeaderText = "w" + (i + 1);
+                dgvCrits[i, 0].Value = w[i];
+
+                dgvInput.Columns[i + 1].HeaderText = "f" + (i + 1);
+            }
+
+            for (int i = 0; i < alts; i++)
+            {
+                dgvInput[0, i].Value = altNames[i];
+                dgvInput.Rows[i].HeaderCell.Value = "a" + (i + 1);
+            }
+
+            for (int i = 0; i < alts; i++)
+                for (int j = 0; j < crits; j++)
+                    dgvInput[j + 1, i].Value = critMat[i, j];
+
             Input();
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
             try
             {
-                Input();
+                if (!Input())
+                    return;
+
                 Calculate();
                 Output();
             }
@@ -296,9 +306,9 @@ namespace TPRLab5
             dgvFun.RowCount = crits * alts;
             dgvFun.ColumnCount = alts + 1;
             for (int i = 0; i < dgvFun.RowCount; i++)
-                dgvFun.Rows[i].HeaderCell.Value = CritPs[i/alts].name; 
+                dgvFun.Rows[i].HeaderCell.Value = CritPs[i / alts].name;
 
-            for (int i = 0; i < dgvFun.RowCount ; i++)
+            for (int i = 0; i < dgvFun.RowCount; i++)
                 dgvFun[0, i].Value = "a" + (i % alts + 1).ToString();
 
             for (int i = 0; i < alts; i++)

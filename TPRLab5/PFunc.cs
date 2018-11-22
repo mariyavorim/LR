@@ -45,22 +45,17 @@ namespace TPRLab5
         }
         public static PFunc Load(StreamReader tr)
         {
-            int funType = int.Parse(tr.ReadLine());
+            string tmp1 = tr.ReadLine();
+            int funType = int.Parse(tmp1);
             double q = double.Parse(tr.ReadLine());
             double s = double.Parse(tr.ReadLine());
             double sigma = double.Parse(tr.ReadLine());
-            TextReader tr2 = new StreamReader( tr.BaseStream);
-            string tmp = tr2.ReadLine();
-            if(bool.TryParse(tmp, out bool sign))
-            {
-                tr.ReadLine();
-                return new PFunc(funType, q, s, sigma, sign);
-            }
-            return new PFunc(funType, q, s, sigma);
+            bool sign = bool.Parse(tr.ReadLine());
+            return new PFunc(funType, q, s, sigma, sign);
         }
 
 
-        P createFunc(bool sign=false)
+        P createFunc(bool sign = false)
         {
             switch (funType)
             {
@@ -91,30 +86,30 @@ namespace TPRLab5
         P createP3(double s, bool sign = false)
         {
             if (sign)
-                return (double d) => d >= 0 ? 0 : d >s ? d / s : 1;
+                return (double d) => d >= 0 ? 0 : d > s ? d / s : 1;
             else
                 return (double d) => d <= 0 ? 0 : d < s ? d / s : 1;
         }
         P createP4(double q, double s, bool sign = false)
         {
-            if(sign)
+            if (sign)
                 return (double d) => d >= q ? 0 : d >= s ? 0.5 : 1;
             else
-            return (double d) => d <= q ? 0 : d <= s ? 0.5 : 1;
+                return (double d) => d <= q ? 0 : d <= s ? 0.5 : 1;
         }
-        P createP5(double q, double s, bool sign=false)
+        P createP5(double q, double s, bool sign = false)
         {
-            if(sign)
+            if (sign)
                 return (double d) => d >= q ? 0 : d >= s ? (d - q) / (s - q) : 1;
             else
-            return (double d) => d <= q ? 0 : d <= s ? (d - q) / (s - q) : 1;
+                return (double d) => d <= q ? 0 : d <= s ? (d - q) / (s - q) : 1;
         }
         P createP6(double s, bool sign = false)
         {
-            if(sign)
+            if (sign)
                 return (double d) => d >= 0 ? 0 : 1 - Math.Exp(-d * d / (2 * s * s));
             else
-            return (double d) => d <= 0 ? 0 : 1 - Math.Exp(-d * d / (2 * s * s));
+                return (double d) => d <= 0 ? 0 : 1 - Math.Exp(-d * d / (2 * s * s));
         }
 
 
