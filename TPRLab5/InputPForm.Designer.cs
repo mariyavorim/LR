@@ -70,7 +70,6 @@
             // btnAbort
             // 
             this.btnAbort.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAbort.Enabled = false;
             this.btnAbort.Location = new System.Drawing.Point(205, 382);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(133, 23);
@@ -293,10 +292,12 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(25, 32);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(38, 17);
             this.radioButton1.TabIndex = 20;
+            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "P1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
