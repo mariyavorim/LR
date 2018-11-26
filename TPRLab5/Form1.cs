@@ -18,7 +18,7 @@ namespace TPRLab5
     {
         public Form1()
         {
-            CritPs = new List<PFunc>();
+            CritPs = new List<Criterii>();
             InitializeComponent();
         }
 
@@ -114,7 +114,7 @@ namespace TPRLab5
         double[] F_min, F_plus, F;
         Matrix pi;
         Matrix mat2;
-        List<PFunc> CritPs;
+        List<Criterii> CritPs;
         void Calculate()
         {
 
@@ -228,7 +228,7 @@ namespace TPRLab5
             CritPs.Clear();
             for (int i = 0; i < crits; i++)
             {
-                CritPs.Add(PFunc.Load(sw));
+                CritPs.Add(Criterii.Load(sw));
             }
 
             sw.Close();
@@ -306,7 +306,7 @@ namespace TPRLab5
             dgvFun.RowCount = crits * alts;
             dgvFun.ColumnCount = alts + 1;
             for (int i = 0; i < dgvFun.RowCount; i++)
-                dgvFun.Rows[i].HeaderCell.Value = CritPs[i / alts].name;
+                dgvFun.Rows[i].HeaderCell.Value = CritPs[i / alts].Pname;
 
             for (int i = 0; i < dgvFun.RowCount; i++)
                 dgvFun[0, i].Value = "a" + (i % alts + 1).ToString();

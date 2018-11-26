@@ -62,7 +62,7 @@
       <DependentUpon>InputPForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Matrix.cs" />
-    <Compile Include="PFunc.cs" />
+    <Compile Include="Criterii.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

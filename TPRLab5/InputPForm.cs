@@ -21,7 +21,7 @@ namespace TPRLab5
 
         RadioButton[] rbs;
 
-        public PFunc result;
+        public Criterii result;
 
         private void btnAbort_Click(object sender, EventArgs e)
         {
@@ -47,7 +47,7 @@ namespace TPRLab5
                 case 5: sigma = double.Parse(tbP6sigma.Text); break;
                 default:throw new Exception("Не выбран радиобаттон");
             }
-            result = new PFunc(ind, q, s, sigma, sign);
+            result = new Criterii(ind, q, s, sigma, sign);
             this.DialogResult = DialogResult.OK;
             this.Close();
 

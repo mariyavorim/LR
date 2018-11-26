@@ -6,32 +6,33 @@ using System.Threading.Tasks;
 using System.IO;
 namespace TPRLab5
 {
-    public class PFunc
+    public class Criterii
     {
         double q, s, sigma;
         int funType;
         bool sign;
         public P func;
-        public string name;
+        public string Pname;
+        public string CName;
 
-        public PFunc(int type, double q, double s, double sigma)
+        public Criterii(int type, double q, double s, double sigma)
         {
             funType = type;
             this.q = q;
             this.s = s;
             this.sigma = sigma;
-            name = "P" + (funType + 1);
+            Pname = "P" + (funType + 1);
             func = createFunc();
         }
 
-        public PFunc(int type, double q, double s, double sigma, bool sign)
+        public Criterii(int type, double q, double s, double sigma, bool sign)
         {
             funType = type;
             this.q = q;
             this.s = s;
             this.sigma = sigma;
             this.sign = sign;
-            name = "P" + (funType + 1);
+            Pname = "P" + (funType + 1);
             func = createFunc(sign);
         }
 
@@ -43,7 +44,7 @@ namespace TPRLab5
             tw.WriteLine(sigma);
             tw.WriteLine(sign);
         }
-        public static PFunc Load(StreamReader tr)
+        public static Criterii Load(StreamReader tr)
         {
             string tmp1 = tr.ReadLine();
             int funType = int.Parse(tmp1);
@@ -51,7 +52,7 @@ namespace TPRLab5
             double s = double.Parse(tr.ReadLine());
             double sigma = double.Parse(tr.ReadLine());
             bool sign = bool.Parse(tr.ReadLine());
-            return new PFunc(funType, q, s, sigma, sign);
+            return new Criterii(funType, q, s, sigma, sign);
         }
 
 
