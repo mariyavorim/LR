@@ -82,11 +82,11 @@
             this.dgvEndResult.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvEndResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEndResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEndResult.Location = new System.Drawing.Point(6, 50);
+            this.dgvEndResult.Location = new System.Drawing.Point(6, 24);
             this.dgvEndResult.Name = "dgvEndResult";
             this.dgvEndResult.ReadOnly = true;
             this.dgvEndResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvEndResult.Size = new System.Drawing.Size(496, 111);
+            this.dgvEndResult.Size = new System.Drawing.Size(496, 67);
             this.dgvEndResult.TabIndex = 8;
             // 
             // groupBox1
@@ -263,7 +263,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPi.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPi.Location = new System.Drawing.Point(6, 401);
+            this.dgvPi.Location = new System.Drawing.Point(6, 378);
             this.dgvPi.Name = "dgvPi";
             this.dgvPi.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -275,7 +275,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPi.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvPi.Size = new System.Drawing.Size(496, 111);
+            this.dgvPi.Size = new System.Drawing.Size(496, 134);
             this.dgvPi.TabIndex = 11;
             // 
             // dgvFun
@@ -287,11 +287,11 @@
             this.dgvFun.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvFun.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFun.Location = new System.Drawing.Point(6, 284);
+            this.dgvFun.Location = new System.Drawing.Point(6, 236);
             this.dgvFun.Name = "dgvFun";
             this.dgvFun.ReadOnly = true;
             this.dgvFun.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvFun.Size = new System.Drawing.Size(496, 111);
+            this.dgvFun.Size = new System.Drawing.Size(496, 136);
             this.dgvFun.TabIndex = 10;
             // 
             // dgvDelta
@@ -303,11 +303,11 @@
             this.dgvDelta.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDelta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDelta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDelta.Location = new System.Drawing.Point(6, 167);
+            this.dgvDelta.Location = new System.Drawing.Point(6, 97);
             this.dgvDelta.Name = "dgvDelta";
             this.dgvDelta.ReadOnly = true;
             this.dgvDelta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvDelta.Size = new System.Drawing.Size(496, 111);
+            this.dgvDelta.Size = new System.Drawing.Size(496, 133);
             this.dgvDelta.TabIndex = 9;
             // 
             // Form1

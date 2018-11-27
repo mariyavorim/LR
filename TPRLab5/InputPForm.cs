@@ -47,7 +47,7 @@ namespace TPRLab5
                 case 5: sigma = double.Parse(tbP6sigma.Text); break;
                 default:throw new Exception("Не выбран радиобаттон");
             }
-            result = new Criterii(ind, q, s, sigma, sign);
+            result = new Criterii(ind, q, s, sigma, sign, tbName.Text);
             this.DialogResult = DialogResult.OK;
             this.Close();
 

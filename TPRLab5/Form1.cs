@@ -39,6 +39,28 @@ namespace TPRLab5
                 dgvCrits.Columns[dgvCrits.ColumnCount - 1].HeaderText = "w" + dgvCrits.ColumnCount;
                 dgvInput.Columns[dgvInput.ColumnCount - 1].HeaderText = "f" + (dgvInput.ColumnCount - 1);
             }
+
+            while (CritPs.Count < nuCriteries.Value)
+            {
+                InputPForm if1 = new InputPForm(CritPs.Count);
+
+                if (if1.ShowDialog() == DialogResult.Abort)
+                {
+
+                    nuCriteries.Value = CritPs.Count;
+                    break;
+                }
+                else
+                {
+                    CritPs.Add(if1.result);
+                    dgvInput.Columns[CritPs.Count].HeaderText = "f" + (CritPs.Count) + " " + CritPs[CritPs.Count - 1].CName;
+                }
+
+            }
+
+            while (CritPs.Count < nuCriteries.Value)
+                CritPs.RemoveAt(CritPs.Count - 1);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -236,12 +258,14 @@ namespace TPRLab5
             nuAlternatives.Value = alts;
             nuCriteries.Value = crits;
 
+
+
             for (int i = 0; i < crits; i++)
             {
                 dgvCrits.Columns[i].HeaderText = "w" + (i + 1);
                 dgvCrits[i, 0].Value = w[i];
 
-                dgvInput.Columns[i + 1].HeaderText = "f" + (i + 1);
+                dgvInput.Columns[i + 1].HeaderText = "f" + (i + 1)+" "+CritPs[i].CName;
             }
 
             for (int i = 0; i < alts; i++)
@@ -254,7 +278,7 @@ namespace TPRLab5
                 for (int j = 0; j < crits; j++)
                     dgvInput[j + 1, i].Value = critMat[i, j];
 
-            Input();
+           // Input();
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -291,7 +315,7 @@ namespace TPRLab5
             {
                 for (int i = 0; i < alts; i++)
                 {
-                    dgvDelta[(alts + 1) * c, i].Value = "Критерий" + (c + 1).ToString();
+                    dgvDelta[(alts + 1) * c, i].Value = CritPs[c].CName;  //"Критерий" + (c + 1).ToString();
                     dgvDelta.Columns[(alts + 1) * c + i + 1].HeaderText = altNames[i];
                 }
                 for (int i = 0; i < alts; i++)

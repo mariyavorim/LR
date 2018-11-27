@@ -25,7 +25,7 @@ namespace TPRLab5
             func = createFunc();
         }
 
-        public Criterii(int type, double q, double s, double sigma, bool sign)
+        public Criterii(int type, double q, double s, double sigma, bool sign, string name="")
         {
             funType = type;
             this.q = q;
@@ -34,6 +34,7 @@ namespace TPRLab5
             this.sign = sign;
             Pname = "P" + (funType + 1);
             func = createFunc(sign);
+            CName = name;
         }
 
         public void Save(TextWriter tw)
@@ -43,6 +44,7 @@ namespace TPRLab5
             tw.WriteLine(s);
             tw.WriteLine(sigma);
             tw.WriteLine(sign);
+            tw.WriteLine(CName);
         }
         public static Criterii Load(StreamReader tr)
         {
@@ -52,7 +54,8 @@ namespace TPRLab5
             double s = double.Parse(tr.ReadLine());
             double sigma = double.Parse(tr.ReadLine());
             bool sign = bool.Parse(tr.ReadLine());
-            return new Criterii(funType, q, s, sigma, sign);
+            string Cname = tr.ReadLine();
+            return new Criterii(funType, q, s, sigma, sign, Cname);
         }
 
 

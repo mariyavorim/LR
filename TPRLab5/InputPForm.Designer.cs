@@ -54,6 +54,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -302,12 +303,20 @@
             this.radioButton1.Text = "P1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(56, 353);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(147, 20);
+            this.tbName.TabIndex = 25;
+            // 
             // InputPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(350, 417);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rbMinus);
             this.Controls.Add(this.rbPlus);
@@ -350,5 +359,6 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox tbName;
     }
 }
